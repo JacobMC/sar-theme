@@ -1,0 +1,579 @@
+/*
+	Theme Name: Sons of the American Revolution Theme
+	Theme URI: http://jacobmckinney.com/
+	Author: Jacob McKinney
+	Author URI: http://jacobmckinney.com/
+	Description: Theme developed for local chapters of the Sons of the American Revolution. Theme is responsive and features a homepage with fully customizable image slider, featured sections, and large featurettes.
+	Tags: red, blue, white
+	Version: 1.0
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Customize the Navbar
+------------------------------------*/
+nav {
+	height:100px;
+	z-index:10;
+	margin-top: -1px;
+}
+
+nav .container {
+	margin-top: 25px;
+}
+
+.navbar {
+	background-color: #004990;
+	border-left: none; 
+	border-right: none;
+	border-bottom: 10px solid #e2383f;
+}
+
+.navbar-default {
+	background-image: none;
+	background-repeat: no-repeat;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+
+.navbar-default .navbar-nav li a,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	color: #fff;
+}
+
+.navbar-brand {
+	font-size:2.5em;
+}
+
+.nav {
+	font-size:1.5em;
+}
+
+.navbar-right {
+	margin-top: 24px;
+}
+
+.navbar-default .navbar-nav li #active {
+	background-color: #e2383f;
+}
+
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav li a:focus {
+	background-color: #e2383f;
+	color: #fff;
+	margin-bottom: -1px;
+}
+
+/* Mega Dropdown
+------------------------------------*/
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+.dropdown-menu {
+	border: none;
+}
+
+.dropdown li {
+	font-size:1.25em;
+	padding: 2px;
+}
+
+ul.nav li.dropdown li a {
+	color: #004990;
+}
+
+ul.nav li.dropdown li a:hover,
+ul.nav li.dropdown li a:focus {
+	color: #004990;
+	background-color: transparent;
+	text-decoration: underline;
+}
+
+.yamm-content .yamm-header {
+	margin-top: -20px;
+	background-color: #e2383f;
+	width: 100%;
+	height: 60px;
+	padding: 0;
+	margin-bottom: 20px;
+	z-index: 100;
+}
+
+.yamm-content .yamm-header h1 {
+	position: absolute;
+	top: -4px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 2em;
+	margin-left: 20px;
+
+}
+
+.yamm-content li {
+	list-style: none;
+}
+
+.nav-widget {
+	background-color: #eeeeee;
+	padding: 10px;
+	font-size: 1.15em;
+	padding-left: 20px;
+	padding-top: 5px;
+}
+
+.nav-widget h3 {
+	font-weight: bold;
+}
+
+.nav-widget p.lead {
+	font-size: .85em;
+}
+
+
+/* Customize the Carousel
+------------------------------------*/
+.carousel {
+	margin: -20px -15px 20px -15px;
+	padding:0;
+}
+
+.carousel-caption {
+	position: absolute;
+	top: 40px;
+	left: 100px;
+	text-align: left;
+	max-width: 300px;
+	text-shadow: none;
+	z-index: 1;
+}
+
+.carousel-caption h1 {
+	background-color: #e2383f;
+	font-weight: bold;
+	width: 350px;
+	padding: 10px;
+}
+
+.carousel-caption .lead {
+	background: #004990;
+	width: 315px;
+	margin: -10px 0 0 17px;
+	padding: 10px;
+}
+
+.carousel-caption .lead a {
+	color: #fff;
+	font-size: .8em;
+	text-decoration: underline;
+}
+
+.carousel-caption .lead a:hover {
+	text-decoration: none;
+}
+
+.item img {
+	margin: 0 auto;
+}
+
+.carousel-control {
+	width: 10%;
+}
+
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+    margin-left: -10px;
+}
+
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+    margin-right: -10px;
+}
+
+.carousel-control,
+.carousel-control .left,
+.carousel-control .right,
+.carousel-control:hover,
+.carousel-control:focus {
+	background-image: none !important;
+}
+
+
+/* Customize Homepage Content
+------------------------------------*/
+
+.thumbnail {
+	border: 0;
+}
+
+.thumbnail img {
+	height: 200px;
+	border-radius: 100px;
+}
+
+.featurette {
+	margin: 50px 0;
+	padding-top: 80px;
+}
+
+.featurette-image {
+	width: 400px;
+	height: 400px;
+	margin-top: -60px;
+	border-radius: 50%;
+}
+
+.featurette-image-padding {
+	margin: 20px 25px 25px 20px;
+}
+
+.featurette-heading {
+	font-size: 4em;
+	color: #5a5a5a;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+
+.muted {
+	color: #999999;
+}
+
+.featurette .lead {
+	font-size: 2em;
+}
+
+.featurette-divider {
+	border-top: 1px solid #eee;
+}
+
+/* Post Summary
+------------------------------------*/
+
+.post-summary {}
+
+.post-summary h1 a {
+	color: #004990;
+}
+
+.post-summary h2 a {
+	color: #004990;
+}
+
+.post-summary h2 a:hover,
+.post-summary h2 a:focus {
+	text-decoration: none;
+}
+
+.description {
+	font-size: 1.2em;
+}
+
+/* Post
+------------------------------------*/
+
+.post-header {}
+
+.post-content {
+	font-size: 1.2em;
+}
+
+.post-meta {
+	list-style: none;
+	margin-left: -40px;
+}
+
+.post-meta li {
+	display: inline-block;
+}
+
+.post-meta a {
+	color: #004990;
+}
+
+.sar-avatar img {
+	border-radius: 15px;
+	margin-right: 5px;
+}
+
+.leader h1 {
+	font-size: 3em;
+	margin-bottom: 30px;
+}
+
+.img-container img {
+	width: 100%;
+	height: auto;
+}
+
+/* Events
+------------------------------------*/
+
+.event-time {
+	font-weight: bold;
+	font-size: .9em;
+	margin-top: -5px;
+}
+
+.event-time-lg {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+.event-map {
+	margin: 10px 0 20px 0;
+}
+
+.event-address {
+	font-size: 1.3em;
+}
+
+/* Sidebar
+------------------------------------*/
+
+.sidebar {
+	width: 100%;
+}
+
+.widget {
+	background-color: #eeeeee;
+	padding: 10px;
+	font-size: 1.25em;
+	margin: 20px 0 20px 0;
+}
+
+.widget h3 {
+	font-weight: bold;
+}
+
+.widget li {
+	list-style: none;
+	text-decoration: underline;
+	margin-left: -20px;
+}
+
+.widget a {
+	color: #004990;
+}
+
+
+/* Footer
+------------------------------------*/
+
+footer {
+	height: 300px;
+	width: 100%;
+	background-color: #e2383f;
+	color: #fff;
+	margin-top: 50px;
+}
+
+footer .container {
+	background-color: #e2383f;
+}
+
+footer hr {
+	margin: 0;
+}
+
+footer img {
+	height: 250px;
+	margin-top:25px;
+	margin-left: 80px;
+}
+
+.footer-nav li {
+	list-style: none;
+	float: left;
+	padding: 20px;
+}
+
+.footer-nav li a {
+	color: #fff;
+}
+
+.footer-nav-main {
+	font-size: 2em;
+	margin-top: 25px;
+}
+
+.footer-nav-sub {
+	font-size: 1.5em;
+}
+
+/* Comments
+------------------------------------*/
+
+.comment-container {
+	margin-top: 50px;
+}
+
+.comment-container a {
+	color: #004990;
+}
+
+.comment-container li {
+	list-style: none;
+	border-top: 1px dotted #c0c0c0;
+	padding-top: 25px;
+	margin-bottom: 50px;
+}
+
+.comment-author {
+	margin-bottom: 10px;
+}
+
+.comment-author cite {
+	font-size: 1.5em;
+	font-style: normal;
+}
+
+.comment-author img.avatar {
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.comment-author span {
+	display: none;
+}
+
+.comment-meta a {
+	color: #999;
+	float: right;
+	font-style: italic;
+	font-size: .8em;
+	text-transform: uppercase;
+}
+
+.comment p {
+	font-size: 1.1em;
+}
+
+.reply {
+	margin-bottom: 25px;
+}
+
+#respond {
+	border-top: 1px dotted #c0c0c0;
+}
+
+#respond .comment-form textarea {
+	height: 150px;
+	width: 75%;
+}
+
+#respond .comment-form label {
+	display: block;
+	font-size: 1.2em;
+	font-weight: normal;
+}
+
+#respond .comment-form input {
+	width: 75%;
+}
+
+#respond .comment-form input#submit {
+	width: 135px;
+	color: #fff;
+	background-color: #004990;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+
+/* Added custom styling for small devices 
+------------------------------------*/
+@media (max-width: 991px) {
+
+	.navbar-brand {
+		font-size: 2em;
+	}
+
+	.navbar-collapse {
+		background-color: #e2383f;
+		border-top: 0;
+	}
+
+	.carousel-indicators {
+		visibility: hidden;
+	}
+
+	.carousel-caption {
+		width: 100%;
+		max-width: 100%;
+		margin-top: 93px;
+	}
+	.carousel-caption h1 {
+		width: 100%;
+		font-size: 1.5em;
+	}
+
+	.carousel-caption .lead {
+		visibility: hidden;
+	}
+
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+  
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}  
+
+@media (max-width: 519px) {
+
+	.navbar-brand {
+		font-size: 1.85em;
+	}
+
+}
+
+/* end custom mobile styling */
+
+
+/* Timely All-In-One-Event-Calendar Custom CSS
+------------------------------------*/
+
+#ai1ec-calendar-view-container .ai1ec-pagination {
+	display: none;
+}
+
+footer.timely {
+	display: none;
+}
