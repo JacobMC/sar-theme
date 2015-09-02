@@ -577,6 +577,7 @@ footer img {
 
 
 /* Custom CSS for The Events Calendar Plugin */
-.datepicker{
+
+#tribe-events-bar{
 	visibility: hidden;
 }
