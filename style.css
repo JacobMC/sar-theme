@@ -140,6 +140,8 @@ ul.nav li.dropdown li a:focus {
 }
 
 
+
+
 /* Customize the Carousel
 ------------------------------------*/
 .carousel {
@@ -580,4 +582,14 @@ footer img {
 
 #tribe-events-bar{
 	visibility: hidden;
+}
+
+ol.vcalendar li {
+	font-size: .8em;
+}
+
+p.tribe-events-widget-link {
+	font-size: .75em;
+	margin-left: 65%;
+	margin-top: 10px;
 }
