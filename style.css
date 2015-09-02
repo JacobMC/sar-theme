@@ -574,3 +574,9 @@ footer img {
 }
 
 /* end custom mobile styling */
+
+
+/* Custom CSS for The Events Calendar Plugin */
+.datepicker{
+	visibility: hidden;
+}
