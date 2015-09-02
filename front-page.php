@@ -102,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 				<div class="caption">
 					<h3><?php echo sanitize_text_field( $tile_one_options[ 'tile_header' ] ); ?></h3>
 					<p><?php echo sanitize_text_field( $tile_one_options[ 'tile_description' ] ); ?></p>
-					<p><a class="btn btn-primary" href="<?php sanitize_text_field( $tile_one_options[ 'tile_link' ] ); ?>" role="button"><?php echo sanitize_text_field( $tile_one_options[ 'tile_linktext' ] ); ?></a></p>
+					<p><a class="btn btn-primary" href="<?php echo sanitize_text_field( $tile_one_options[ 'tile_link' ] ); ?>" role="button"><?php echo sanitize_text_field( $tile_one_options[ 'tile_linktext' ] ); ?></a></p>
 				</div>
 			</div>
 		</div>
