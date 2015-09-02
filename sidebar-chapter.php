@@ -8,8 +8,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 	
 	<?php if( !dynamic_sidebar( 'chapter' ) ) : ?>
 
-		<h3>Sidebar Setup</h3>
-		<p>Oops! Looks like you need to add widgets via the admin menu!</p>
 
 	<?php endif; ?> 
 

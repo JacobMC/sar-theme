@@ -409,6 +409,11 @@ footer img {
 	font-size: 1.5em;
 }
 
+.reg {
+	position: absolute;
+	top: 225px;
+}
+
 /* Comments
 ------------------------------------*/
 
@@ -554,6 +559,10 @@ footer img {
     .collapsing {
         overflow: hidden!important;
     }
+
+    .reg {
+		left: 300px;
+	}
 }  
 
 @media (max-width: 519px) {
@@ -565,15 +574,3 @@ footer img {
 }
 
 /* end custom mobile styling */
-
-
-/* Timely All-In-One-Event-Calendar Custom CSS
-------------------------------------*/
-
-#ai1ec-calendar-view-container .ai1ec-pagination {
-	display: none;
-}
-
-footer.timely {
-	display: none;
-}
