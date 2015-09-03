@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 		<div class="col-md-8">
 
 			<div class="leader">
-            	<h1><?php wp_title(''); ?>'s Posts</h1>
+            	<h1><?php wp_title(''); ?> Posts</h1>
             </div>
 
 			<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
