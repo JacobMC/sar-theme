@@ -1,13 +1,7 @@
 <?php
 //Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
-?>
 
-<?php
-
-/*
- * Include file to render Theme Options
- */
 include 'sar-settings.php';
 
 /*-------------------------------------------------------------------------------*
@@ -162,4 +156,3 @@ function sar_register_widgets() {
 	));
 
 } // end sar_register_widgets
-
