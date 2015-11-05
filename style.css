@@ -215,6 +215,7 @@ ul.nav li.dropdown li a:focus {
 
 .thumbnail {
 	border: 0;
+	box-shadow: none;
 }
 
 .thumbnail img {
