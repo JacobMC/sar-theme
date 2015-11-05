@@ -5,6 +5,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 <?php get_header(); ?>
 
+<?php
+
+	// Load Post Meta options into a variable
+	$general_options = get_option( 'general_options' );
+
+	if( !isset( $general_options[ 'display_post_meta' ] ) ) {
+		$general_options[ 'display_post_meta' ] = false;
+	}
+
+?>
 
 <div class="container">
 	<section class="row">
@@ -22,16 +32,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 								<h1><a href='<?php the_permalink(); ?>'><?php the_title(); ?></a></h1>
 
-								<ul class="post-meta">
-									<li class='author'>
-										<span class="sar-avatar small">
-											<?php echo get_avatar( get_the_author_meta( 'ID' ), 24 ); ?>
-										</span>
-										by <?php the_author_posts_link(); ?>
-									</li>
-									<li class="category">in <?php the_category( ', ' ); ?></li>
-									<li class="date">on <?php the_time( 'F j, Y' ); ?></li>
-								</ul>
+								<?php if( $general_options[ 'display_post_meta' ] == true ) { ?>
+
+									<ul class="post-meta">
+										<li class='author'>
+											<span class="sar-avatar small">
+												<?php echo get_avatar( get_the_author_meta( 'ID' ), 24 ); ?>
+											</span>
+											by <?php the_author_posts_link(); ?>
+										</li>
+										<li class="category">in <?php the_category( ', ' ); ?></li>
+										<li class="date">on <?php the_time( 'F j, Y' ); ?></li>
+									</ul>
+
+								<?php } ?>
 
 						
 								<p class="lead"><?php echo strip_tags( get_the_excerpt() ); ?></p>

@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 function sar_theme_init() {
 
 	/*
+	 * Register General Settings
+	 */
+	register_setting( 'sar_general_options', 'general_options' );
+
+	/*
 	 * Register Carousel Settings
 	 */
 	register_setting( 'sar_slide_one_options', 'carousel_one_options' );
@@ -30,6 +35,16 @@ function sar_theme_init() {
 	register_setting( 'sar_featurette_two_options', 'featurette_two_options' );
 	register_setting( 'sar_featurette_three_options', 'featurette_three_options' );
 
+
+	/*
+	 * Register General Section
+	 */
+	add_settings_section(
+		'sar_general_section',
+		'General Settings',
+		'sar_general_section_callback',
+		'sar_general_options'
+	);
 
 	/*
 	 * Register Carousel Sections
@@ -103,6 +118,17 @@ function sar_theme_init() {
 		'sar_featurette_three_options'
 	);
 
+
+	/*
+	 * Register General Settings
+	 */
+	add_settings_field(
+		'sar_display_post_meta',
+		'Display Post Meta',
+		'sar_display_post_meta_callback',
+		'sar_general_options',
+		'sar_general_section'
+	);
 
 
 	/*
@@ -552,6 +578,9 @@ add_filter( 'admin_init', 'sar_theme_init' );
 /*-------------------------------------------------------------------------------*
  *	Define Section Callbacks
  *-------------------------------------------------------------------------------*/
+function sar_general_section_callback() {
+
+} // end sar_general_section_callback
 
 function sar_carousel_section_callback() {
 
@@ -592,6 +621,21 @@ function sar_validate_all_things( $input ) {
 /*-------------------------------------------------------------------------------*
  *	Define Field Callbacks
  *-------------------------------------------------------------------------------*/
+
+function sar_display_post_meta_callback () {
+
+	$options = get_option( 'general_options' );
+
+	if( !isset( $options[ 'display_post_meta' ] ) ) {
+		$options[ 'display_post_meta' ] = '';
+	}
+
+	$html = '<input type="checkbox" id="display_post_meta" name="general_options[display_post_meta]" value="1"' . checked( 1, $options[ 'display_post_meta' ], false ) . '/>';
+	$html .= '<label for="display_post_meta">Check box to display post author, category, and date.</label>';
+
+	echo $html;
+
+} // end sar_display_post_meta_callback
 
 function sar_header_callback( $setting, $number, $type ) {
 
@@ -716,10 +760,19 @@ function sar_add_settings_page() {
 
  	add_submenu_page(
  		'sarsettings',
+ 		__( 'General Settings', 'sarsettings' ),
+ 		__( 'General Settings', 'sarsettings' ),
+ 		'edit_theme_options',
+ 		'sarsettings',
+ 		create_function( '', 'sar_options_display( "General Settings", "sar_general_options", "general" );' )
+ 	);
+
+ 	add_submenu_page(
+ 		'sarsettings',
  		__( 'Carousel Options', 'sarsettings' ),
  		__( 'Carousel Options', 'sarsettings' ),
  		'edit_theme_options',
- 		'sarsettings',
+ 		'sar_carousel_options',
  		create_function( '', 'sar_options_display( "Carousel Options", "sar_carousel_options", "slide" );' )
  	);
 
@@ -764,17 +817,28 @@ function sar_options_display( $title, $page, $type ) {
 			$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : $type . '_one';
 		?>
 
-		<h2 class="nav-tab-wrapper">
-			<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_one" class="nav-tab <?php echo $active_tab == $type . '_one' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> One</a>
-			<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_two" class="nav-tab <?php echo $active_tab == $type . '_two' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> Two</a>
-			<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_three" class="nav-tab <?php echo $active_tab == $type . '_three' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> Three</a>
-		</h2>
+		<?php if( $type == "general" ) {
+
+		} else { ?>
+
+			<h2 class="nav-tab-wrapper">
+				<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_one" class="nav-tab <?php echo $active_tab == $type . '_one' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> One</a>
+				<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_two" class="nav-tab <?php echo $active_tab == $type . '_two' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> Two</a>
+				<a href="?page=<?php echo $page; ?>&tab=<?php echo $type; ?>_three" class="nav-tab <?php echo $active_tab == $type . '_three' ? 'nav-tab-active' : ''; ?>"><?php echo ucfirst( $type ); ?> Three</a>
+			</h2>
+
+		<?php } ?>
 
 		<form method="post" action="options.php">
 
 			<?php 
 
-				if( $active_tab == $type . '_one' ) {
+				if( $type == "general" ) {
+					
+					settings_fields( 'sar_' . $type . '_options' );
+					do_settings_sections( 'sar_' . $type . '_options' );
+
+				} else if( $active_tab == $type . '_one' ) {
 
 					settings_fields( 'sar_' . $type . '_one_options' );
 					do_settings_sections( 'sar_' . $type . '_one_options' );
